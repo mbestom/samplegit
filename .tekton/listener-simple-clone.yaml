@@ -14,6 +14,7 @@ spec:
       default: ""
     - name: pipeline-debug
       default: "0"
+    - name: apikey
   resourcetemplates:
     - apiVersion: v1
       kind: PersistentVolumeClaim
@@ -42,6 +43,8 @@ spec:
             value: $(params.git-access-token)
           - name: pipeline-debug
             value: $(params.pipeline-debug)
+          - name: apikey
+            value: $(params.apikey)
         workspaces:
           - name: pipeline-ws
             persistentVolumeClaim:
