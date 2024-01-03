@@ -47,6 +47,6 @@ metadata:
 spec:
   triggers:
     - binding:
-        name: rigger-binding-sample
+        name: trigger-binding-sample
       template:
         name: trigger-template-sample
