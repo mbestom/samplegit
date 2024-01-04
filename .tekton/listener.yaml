@@ -7,7 +7,6 @@ spec:
   params:
     - name: repo-url
       description: The git repo
-    - name: gitInitImage
   resourcetemplates:
     - apiVersion: tekton.dev/v1beta1
       kind: PipelineRun
@@ -18,12 +17,10 @@ spec:
           name: clone-read
         params:
           - name: repo-url
-            value: $(params.repo-url)
-          - name: gitInitImage
-            value: $(params.gitInitImage)
+            value: $(params.repo-url) 
         podTemplate:
           securityContext:
-          fsGroup: 65532
+          fsGroup: 10001
         workspaces:
         - name: shared-data
           volumeClaimTemplate:

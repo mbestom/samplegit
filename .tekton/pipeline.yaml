@@ -9,7 +9,6 @@ spec:
   - name: repo-url
     type: string
     description: The git repo URL to clone from.
-  - name: gitInitImage
   workspaces:
   - name: shared-data
     description: | 
@@ -25,8 +24,6 @@ spec:
     params:
     - name: url
       value: $(params.repo-url)
-    - name: gitInitImage
-      value: $(params.gitInitImage)
   - name: show-readme
     runAfter: ["fetch-source"]
     taskRef:
