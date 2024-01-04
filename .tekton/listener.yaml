@@ -15,10 +15,11 @@ spec:
       spec:
         pipelineRef:
           name: clone-read
-        podTemplate:
-          securityContext:
-            runAsNonRoot: true
-            runAsUser: 65532
+        taskRunTemplate:
+          podTemplate:
+            securityContext:
+              runAsNonRoot: true
+              runAsUser: 65532
         params:
           - name: repo-url
             value: $(params.repo-url) 
