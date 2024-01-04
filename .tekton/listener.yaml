@@ -15,9 +15,9 @@ spec:
       spec:
         pipelineRef:
           name: clone-read
-        podTemplate:
-          securityContext:
-          fsGroup: 65532
+        params:
+          - name: repo-url
+            value: $(params.repo-url)
         workspaces:
         - name: shared-data
           volumeClaimTemplate:
@@ -27,9 +27,6 @@ spec:
               resources:
                 requests:
                   storage: 1Gi
-          params:
-          - name: repo-url
-            value: $(params.repo-url) 
 ---
 apiVersion: tekton.dev/v1beta1
 kind: TriggerBinding
