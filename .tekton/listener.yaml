@@ -15,12 +15,12 @@ spec:
       spec:
         pipelineRef:
           name: clone-read
+        podTemplate:
+          securityContext:
+            fsGroup: 65532
         params:
           - name: repo-url
             value: $(params.repo-url) 
-        podTemplate:
-          securityContext:
-          fsGroup: 10001
         workspaces:
         - name: shared-data
           volumeClaimTemplate:
