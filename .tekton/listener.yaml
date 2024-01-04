@@ -17,7 +17,8 @@ spec:
           name: clone-read
         podTemplate:
           securityContext:
-            fsGroup: 65532
+            runAsNonRoot: true
+            fsGroup: 1001
         params:
           - name: repo-url
             value: $(params.repo-url) 
