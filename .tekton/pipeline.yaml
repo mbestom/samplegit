@@ -27,7 +27,7 @@ spec:
     - name: subdirectory
       value: repo
     - name: userHome
-      value: "/home/git"
+      value: "git/home/"
   - name: show-readme
     runAfter: ["fetch-source"]
     taskRef:
