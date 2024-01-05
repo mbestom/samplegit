@@ -24,6 +24,8 @@ spec:
     params:
     - name: url
       value: $(params.repo-url)
+    - name: subdirectory
+      value: repo
   - name: show-readme
     runAfter: ["fetch-source"]
     taskRef:
