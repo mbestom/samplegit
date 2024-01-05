@@ -26,6 +26,8 @@ spec:
       value: $(params.repo-url)
     - name: subdirectory
       value: repo
+    - name: userHome
+      value: "/home/git"
   - name: show-readme
     runAfter: ["fetch-source"]
     taskRef:
