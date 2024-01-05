@@ -18,7 +18,7 @@ spec:
         podTemplate:
           securityContext:
             runAsNonRoot: true
-            runAsUser: 65532
+            runAsUser: 1001
             fsGroup: 65532
         params:
           - name: repo-url
